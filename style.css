@@ -1,9 +1,104 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  /* HSL color mode */
+  --clr-dark: #3a4041;
+  --clr-dark-sec: #191919;
+  --clr-light: #d4cfc2;
+  --clr-white: #edebdb;
+  --clr-orange: #fd6500;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--clr-white);
+  background-color: var(--clr-dark);
+}
+
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+.accordion__body {
+  max-width: 550px;
+  margin: 10rem 2rem;
+}
+.accordion__container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark-sec);
+}
+
+.accordion__item {
+  position: relative;
+  margin: 10px 10px;
+}
+
+.accordion__label {
+  position: relative;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.accordion__title {
+  font-size: 1.125rem;
+  position: relative;
+}
+.accordion__tags {
+  display: flex;
+  margin: 0.5rem auto 0;
+  list-style-type: none;
+}
+
+.accordion__tags li {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  padding-right: 5px;
+}
+.accordion__arrow {
+  position: absolute;
+  top: 40%;
+  right: -5px;
+  color: #ff4500;
+  font-size: 2rem;
+}
+.accordion__tags .uil-arrow-down {
+  display: none;
+}
+
+.accordion__content {
+  height: 0;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  padding: 0 1.25rem;
+  margin-top: 0.25rem;
+  background-color: #2b2d2e;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.accordion__line {
+  border: 1px solid grey;
+}
+
+.accordion__item.active .accordion__content {
+  height: 150px;
+}
+
+.accordion__item.active .accordion__label .accordion__tags .uil-arrow-right {
+  display: none;
+}
+.accordion__item.active .accordion__label .accordion__tags .uil-arrow-down {
+  display: block;
+}
+
+.accordion__item.active .accordion__title {
+  color: orangered;
 }
